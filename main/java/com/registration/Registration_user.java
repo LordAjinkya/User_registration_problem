@@ -105,6 +105,24 @@ public class Registration_user {
             System.out.println("password is Invalid");
         }
     }
+
+    public static void numinpassword()
+    {
+        System.out.println("Enter Your Password.");
+        String numinpassword = scan.nextLine();
+
+        System.out.println("The Password is: " + numinpassword);
+        String pattern = "^(.*[A-Z]{1,}[0-9]{1,}[A-Za-z0-9]{6,})$";
+        if( numinpassword.matches(pattern))
+        {
+            System.out.println("password is Valid");
+        }
+        else
+        {
+            System.out.println("password is Invalid");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
@@ -113,6 +131,7 @@ public class Registration_user {
         MobileNo();
         Password();
         UpperCase();
+        numinpassword();
 
     }
 }
