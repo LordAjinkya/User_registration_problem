@@ -89,6 +89,22 @@ public class Registration_user {
             System.out.println("Password is Invalid");
         }
     }
+    public static void UpperCase()
+    {
+        System.out.println("Enter Your Password.");
+        String UpperCase = scan.nextLine();
+
+        System.out.println("The Password is: " + UpperCase);
+        String pattern =  "^(.*[A-Z]{1}[A-Za-z0-9]{7,})$";
+        if( UpperCase.matches(pattern))
+        {
+            System.out.println("password is Valid");
+        }
+        else
+        {
+            System.out.println("password is Invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
@@ -96,6 +112,7 @@ public class Registration_user {
         Email();
         MobileNo();
         Password();
+        UpperCase();
 
     }
 }
