@@ -73,12 +73,29 @@ public class Registration_user {
             System.out.println("number is Invalid");
         }
     }
+    public static void Password()
+    {
+        System.out.println("Enter Your Password.");
+        String password = scan.nextLine();
+
+        System.out.println("The Password is: " + password);
+        String pattern =  "^[A-Za-z0-9]{8,}$";
+        if( password.matches(pattern))
+        {
+            System.out.println("Password is Valid");
+        }
+        else
+        {
+            System.out.println("Password is Invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
         LastName();
         Email();
         MobileNo();
+        Password();
 
     }
 }
