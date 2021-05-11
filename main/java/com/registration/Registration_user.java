@@ -123,6 +123,24 @@ public class Registration_user {
         }
     }
 
+    //password with one special character
+    public static void SpecialCharacter()
+    {
+        System.out.println("Enter Your Password.");
+        String SpecialCharacter = scan.nextLine();
+
+        System.out.println("The Password is: " + SpecialCharacter);
+        String pattern = "^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$";
+        if( SpecialCharacter.matches(pattern))
+        {
+            System.out.println("password is Valid");
+        }
+        else
+        {
+            System.out.println("password is Invalid");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
@@ -132,6 +150,7 @@ public class Registration_user {
         Password();
         UpperCase();
         numinpassword();
+        SpecialCharacter();
 
     }
 }
