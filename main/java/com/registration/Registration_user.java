@@ -37,10 +37,29 @@ public class Registration_user {
             System.out.println("Name is Invalid");
         }
     }
+
+    //validate user email
+    public static void Email()
+    {
+        System.out.println("Enter Your Email");
+        String email = scan.nextLine();
+
+        System.out.println("The Email is: " + email);
+        String pattern = "^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$";
+        if( email.matches(pattern))
+        {
+            System.out.println("email is Valid");
+        }
+        else
+        {
+            System.out.println("email is Invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
         LastName();
+        Email();
 
     }
 }
