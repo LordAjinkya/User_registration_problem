@@ -55,11 +55,30 @@ public class Registration_user {
             System.out.println("email is Invalid");
         }
     }
+
+    //validate mobile num
+    public static void MobileNo()
+    {
+        System.out.println("Enter Your Mobile No.");
+        String number = scan.nextLine();
+
+        System.out.println("The Mobile No is: " + number);
+        String pattern =  "^([0-9]{2})[ ]([1-9]{1}[0-9]{9})$";
+        if( number.matches(pattern))
+        {
+            System.out.println("number is Valid");
+        }
+        else
+        {
+            System.out.println("number is Invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
         firstname();
         LastName();
         Email();
+        MobileNo();
 
     }
 }
