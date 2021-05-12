@@ -1,95 +1,91 @@
 package com.registration;
-import java.util.*;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Registration_user {
     public static final Scanner scan = new Scanner(System.in);
-    public static void firstname()
-    {
+    public static boolean firstname(String firstname) {
         System.out.println("Enter Your First name");
-        String name = scan.nextLine();
 
-        System.out.println("The first name is: " + name);
+
+        System.out.println("The first name is: " + firstname);
         String pattern = "^([A-Z]{1})([a-z]{2,})$";
-        if( name.matches(pattern))
-        {
+        if (firstname.matches(pattern)) {
             System.out.println("Name is Valid");
-        }
-        else
-        {
+            return true;
+        } else {
             System.out.println("Name is Invalid");
+            return false;
         }
     }
 
     //validating last name of the user
-    public static void LastName()
-    {
-        System.out.println("Enter Your Last name");
-        String name = scan.nextLine();
+    public static boolean lastname(String lastname) {
+        System.out.println("Enter Your last name");
 
-        System.out.println("The Last name is: " + name);
+
+        System.out.println("The last name is: " + lastname);
         String pattern = "^([A-Z]{1})([a-z]{2,})$";
-        if( name.matches(pattern))
-        {
+        if (lastname.matches(pattern)) {
             System.out.println("Name is Valid");
-        }
-        else
-        {
+            return true;
+        } else {
             System.out.println("Name is Invalid");
+            return false;
         }
     }
 
     //validate user email
-    public static void Email()
+    public static boolean Email(String Email)
     {
         System.out.println("Enter Your Email");
-        String email = scan.nextLine();
 
-        System.out.println("The Email is: " + email);
+        System.out.println("The Email is: " + Email);
         String pattern = "^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$";
-        if( email.matches(pattern))
+        if( Email.matches(pattern))
         {
             System.out.println("email is Valid");
+            return true;
         }
         else
         {
             System.out.println("email is Invalid");
+            return false;
         }
     }
 
     //validate mobile num
-    public static void MobileNo()
+    public static boolean MobileNo(String mobilenumber )
     {
-        System.out.println("Enter Your Mobile No.");
-        String number = scan.nextLine();
-
-        System.out.println("The Mobile No is: " + number);
+        System.out.println("The Mobile No is: " + mobilenumber);
         String pattern =  "^([0-9]{2})[ ]([1-9]{1}[0-9]{9})$";
-        if( number.matches(pattern))
+        if( mobilenumber.matches(pattern))
         {
             System.out.println("number is Valid");
+            return true;
         }
         else
         {
             System.out.println("number is Invalid");
+            return false;
         }
     }
-    public static void Password()
+    public static boolean Password(String Password)
     {
         System.out.println("Enter Your Password.");
-        String password = scan.nextLine();
 
-        System.out.println("The Password is: " + password);
+        System.out.println("The Password is: " + Password);
         String pattern =  "^[A-Za-z0-9]{8,}$";
-        if( password.matches(pattern))
+        if( Password.matches(pattern))
         {
             System.out.println("Password is Valid");
+            return true;
         }
         else
         {
             System.out.println("Password is Invalid");
+            return false;
         }
     }
     public static void UpperCase()
@@ -149,14 +145,15 @@ public class Registration_user {
 
     public static void main(String[] args) {
         System.out.println("Welcome to user registration problem");
-        firstname();
-        LastName();
-        Email();
-        MobileNo();
-        Password();
+        firstname(scan.nextLine());
+        lastname(scan.nextLine());
+        Email(scan.nextLine());
+        MobileNo(scan.nextLine());
+        Password(scan.nextLine());
         UpperCase();
         numinpassword();
         SpecialCharacter();
+
 
         //UC9 Should clear all email samples
         String email1 ="abc@yahoo.com";
