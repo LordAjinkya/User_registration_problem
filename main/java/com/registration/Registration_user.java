@@ -139,6 +139,11 @@ public class Registration_user {
             System.out.println("password is Invalid");
         }
     }
+    public class IllegalArgumentException extends Exception {
+        public IllegalArgumentException(String message) {
+            super(message);
+        }
+    }
 
     //validate all emails
 
