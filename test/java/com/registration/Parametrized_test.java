@@ -41,7 +41,7 @@ public class Parametrized_test {
                 { "xyz+100@gmail.com" , true }});
     }
     @Test
-    public void checkEmailValidOrNot() {
+    public void checkEmailValidOrNot() throws Registration_user_Exception {
         System.out.println("This is Expected Result"+ this.expectedResult);
         Assertions.assertEquals(this.expectedResult, registration_user.Email(this.email));
     }

@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 
 public class Registration_user {
     public static final Scanner scan = new Scanner(System.in);
-    public static boolean firstname(String firstname) {
+    public static boolean firstname(String firstname) throws Registration_user_Exception {
         System.out.println("Enter Your First name");
 
 
@@ -16,12 +16,12 @@ public class Registration_user {
             return true;
         } else {
             System.out.println("Name is Invalid");
-            return false;
+            throw new Registration_user_Exception("Enetr the valid Name");
         }
     }
 
     //validating last name of the user
-    public static boolean lastname(String lastname) {
+    public static boolean lastname(String lastname)throws Registration_user_Exception {
         System.out.println("Enter Your last name");
 
 
@@ -32,12 +32,12 @@ public class Registration_user {
             return true;
         } else {
             System.out.println("Name is Invalid");
-            return false;
+            throw new Registration_user_Exception("Enter the valid Name");
         }
     }
 
     //validate user email
-    public static boolean Email(String Email)
+    public static boolean Email(String Email)throws Registration_user_Exception
     {
         System.out.println("Enter Your Email");
 
@@ -51,12 +51,12 @@ public class Registration_user {
         else
         {
             System.out.println("email is Invalid");
-            return false;
+            throw new Registration_user_Exception("Enter the valid email");
         }
     }
 
     //validate mobile num
-    public static boolean MobileNo(String mobilenumber )
+    public static boolean MobileNo(String mobilenumber )throws Registration_user_Exception
     {
         System.out.println("The Mobile No is: " + mobilenumber);
         String pattern =  "^([0-9]{2})[ ]([1-9]{1}[0-9]{9})$";
@@ -68,10 +68,10 @@ public class Registration_user {
         else
         {
             System.out.println("number is Invalid");
-            return false;
+            throw new Registration_user_Exception("Enter the valid email");
         }
     }
-    public static boolean Password(String Password)
+    public static boolean Password(String Password)throws Registration_user_Exception
     {
         System.out.println("Enter Your Password.");
 
@@ -85,7 +85,7 @@ public class Registration_user {
         else
         {
             System.out.println("Password is Invalid");
-            return false;
+            throw new Registration_user_Exception("Enter the valid password");
         }
     }
     public static void UpperCase()
@@ -139,16 +139,12 @@ public class Registration_user {
             System.out.println("password is Invalid");
         }
     }
-    public class IllegalArgumentException extends Exception {
-        public IllegalArgumentException(String message) {
-            super(message);
-        }
-    }
+
 
     //validate all emails
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Registration_user_Exception {
         System.out.println("Welcome to user registration problem");
         firstname(scan.nextLine());
         lastname(scan.nextLine());
